@@ -1,0 +1,11 @@
+<form action="." method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button >upload</button>
+</form>
+
+{% for c in content %}
+<video controls="controls">
+    <source src="{{c.video.url}}" type="video/mp4"/>
+</video>    
+{% endfor %}
